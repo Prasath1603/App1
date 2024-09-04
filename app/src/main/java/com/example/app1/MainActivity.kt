@@ -109,7 +109,6 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-
         // Make Bluetooth Discoverable
         discoverableBtn.setOnClickListener {
             if (!bAdapter.isDiscovering) {
@@ -117,6 +116,21 @@ class MainActivity : ComponentActivity() {
                 intent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300)
                 startActivity(intent)
                 Toast.makeText(this, "Making device discoverable", Toast.LENGTH_LONG).show()
+            }
+        }
+
+        // Get Paired Devices
+        pairedBtn.setOnClickListener {
+            if (bAdapter.isEnabled) {
+                val pairedDevices = bAdapter.bondedDevices
+                if (pairedDevices.isNotEmpty()) {
+                    val pairedDevicesList = pairedDevices.joinToString(separator = "\n") { device -> device.name }
+                    pairedTv.text = "Paired Devices:\n$pairedDevicesList"
+                } else {
+                    pairedTv.text = "No paired devices found."
+                }
+            } else {
+                Toast.makeText(this, "Bluetooth is off. Please turn it on first.", Toast.LENGTH_LONG).show()
             }
         }
     }

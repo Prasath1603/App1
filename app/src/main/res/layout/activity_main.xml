@@ -59,11 +59,16 @@
         android:text="Get Paired Devices"
         android:minWidth="200dp"/>
 
+    <!-- Section to display paired devices -->
     <TextView
         android:id="@+id/pairedTv"
-        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#000"/>
+        android:padding="10dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:background="@drawable/paired_devices_background"
+        android:text="Paired Devices will appear here"
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>
