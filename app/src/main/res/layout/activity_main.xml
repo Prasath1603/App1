@@ -7,6 +7,7 @@
     android:gravity="center_horizontal"
     tools:context=".MainActivity">
 
+    <!-- Bluetooth Status TextView -->
     <TextView
         android:id="@+id/bluetoothStatusTv"
         android:layout_width="match_parent"
@@ -17,12 +18,14 @@
         android:textColor="#000"
         android:textSize="20sp"/>
 
+    <!-- Bluetooth Status ImageView -->
     <ImageView
         android:id="@+id/bluetoothIv"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/ic_bluetooth_off"/>
 
+    <!-- Turn On Bluetooth Button -->
     <Button
         android:textColor="#FFF"
         android:background="@drawable/button_background"
@@ -30,8 +33,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Turn On"
-        android:minWidth="200dp"/>
+        android:minWidth="200dp"
+        android:layout_marginTop="10dp"/>
 
+    <!-- Turn Off Bluetooth Button -->
     <Button
         android:textColor="#FFF"
         android:background="@drawable/button_background"
@@ -39,8 +44,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Turn Off"
-        android:minWidth="200dp"/>
+        android:minWidth="200dp"
+        android:layout_marginTop="10dp"/>
 
+    <!-- Make Discoverable Button -->
     <Button
         android:textColor="#FFF"
         android:background="@drawable/button_background"
@@ -48,8 +55,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Discoverable"
-        android:minWidth="200dp"/>
+        android:minWidth="200dp"
+        android:layout_marginTop="10dp"/>
 
+    <!-- Get Paired Devices Button -->
     <Button
         android:textColor="#FFF"
         android:background="@drawable/button_background"
@@ -57,18 +66,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Get Paired Devices"
-        android:minWidth="200dp"/>
+        android:minWidth="200dp"
+        android:layout_marginTop="10dp"/>
 
-    <!-- Section to display paired devices -->
+    <!-- Section for Currently Connected Devices -->
     <TextView
-        android:id="@+id/pairedTv"
+        android:id="@+id/currentlyConnectedTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:textColor="#000"
-        android:textSize="16sp"
-        android:background="@drawable/paired_devices_background"
-        android:text="Paired Devices will appear here"
-        android:layout_marginTop="20dp"/>
+        android:textSize="18sp"
+        android:text="Currently Connected Devices"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/currently_connected_background"/>
+
+    <!-- ListView for Displaying Connected Devices -->
+    <ListView
+        android:id="@+id/connectedDevicesListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>
